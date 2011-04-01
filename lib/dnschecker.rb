@@ -15,8 +15,10 @@ class Dnschecker
       else
         show_result "NOK", name, "No answer for this name"
       end
+    rescue Net::DNS::Resolver::NoResponseError
+      show_result "ERRO", name, "Timeout"
     rescue Exception => e
-      show_result "ERROR", name, e.message
+      show_result "ERRO", name, e.message
     end
   end
   

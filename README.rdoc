@@ -1,6 +1,6 @@
 = Usage
 
-   ./dnschecker <_DOMAIN_LIST_FILE_>
+   ./dnschecker <DOMAIN_LIST_FILE>
 
 
 where _DOMAIN_LIST_FILE_ should be a text file with one domain name per line.
