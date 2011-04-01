@@ -1,0 +1,9 @@
+= dnschecker
+
+   ./dnschecker <DOMAIN_LIST_FILE>
+
+
+where DOMAIN_LIST_FILE should be a text file with one domain name per line.
+
+*dnscheker* will check the "root" name (without hostname) and "www".
+
