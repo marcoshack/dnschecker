@@ -1,9 +1,9 @@
-= dnschecker
+= Usage
 
-   ./dnschecker <DOMAIN_LIST_FILE>
+   ./dnschecker <_DOMAIN_LIST_FILE_>
 
 
-where DOMAIN_LIST_FILE should be a text file with one domain name per line.
+where _DOMAIN_LIST_FILE_ should be a text file with one domain name per line.
 
 *dnscheker* will check the "root" name (without hostname) and "www".
 
