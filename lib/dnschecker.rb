@@ -16,9 +16,9 @@ class Dnschecker
         show_result "NOK", name, "No answer for this name"
       end
     rescue Net::DNS::Resolver::NoResponseError
-      show_result "ERRO", name, "Timeout"
+      show_result "ERROR", name, "Timeout"
     rescue Exception => e
-      show_result "ERRO", name, e.message
+      show_result "ERROR", name, e.message
     end
   end
   
@@ -31,8 +31,11 @@ class Dnschecker
   end
   
   def answer_address(answer)
-    answer.address.to_s if answer.type == "A"
-    answer.cname if answer.type == "CNAME"
+    if answer.type == "A"
+      answer.address.to_s 
+    elsif answer.type == "CNAME"
+      answer.cname
+    end
   end
   
   def show_result(status, name, message)
