@@ -11,7 +11,7 @@ class Dnschecker
     begin
       answer = @resolver.query(name).answer
       if !answer.empty?
-        show_result "OK", name, answer_address(answer[0])
+        show_result "OK", name, answer_address(answer[0]), answer[0].type
       else
         show_result "NOK", name, "No answer for this name"
       end
@@ -37,8 +37,8 @@ class Dnschecker
       answer.cname
     end
   end
-  
-  def show_result(status, name, message)
-    printf "%-5s\t%-30s\t%-50s\n", status, name, message
+
+  def show_result(status, name, message, type = "")
+    printf "%-5s\t%-30s\t%-5s\t%-30s\n", status, name, type, message
   end
 end
